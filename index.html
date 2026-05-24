@@ -1,33 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AgroSmart AI</title>
+
 <link rel="stylesheet" href="css/style.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
 <nav class="navbar">
+
 <div class="logo">🌱 AgroSmart AI</div>
 
 <ul>
 <li><a href="#">Home</a></li>
-<li><a href="#">Features</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#">Login</a></li>
+<li><a href="#">Signup</a></li>
+<li><a href="#">Contact</a></li>
 
 <li>
-<select id="language" onchange="changeLanguage()">
+<select id="language" onchange="changeLanguage()" class="lang-select">
 <option value="en">English</option>
 <option value="hi">हिंदी</option>
 <option value="mr">मराठी</option>
 </select>
 </li>
+
 </ul>
+
 </nav>
 
 <section class="hero">
+
+<div class="overlay"></div>
+
 <div class="hero-content">
 
 <h1 id="title">Smart Agriculture Advisor</h1>
@@ -36,40 +47,102 @@
 Everything you need in one modern agriculture platform.
 </p>
 
+<a href="#features">
 <button>Explore Features</button>
+</a>
 
 </div>
+
 </section>
 
-<section class="features-section">
+<section class="features-section" id="features">
 
 <div class="feature-grid">
 
 <div class="feature-card">
 <h3 id="cropTitle">🌾 Crop Advisor</h3>
+
+<select>
+<option>Black Soil</option>
+<option>Red Soil</option>
+<option>Sandy Soil</option>
+</select>
+
+<input type="text" placeholder="Temperature °C">
+
 <button id="cropBtn">Recommend Crop</button>
+
 </div>
 
 <div class="feature-card">
+
 <h3 id="weatherTitle">☁ Weather Forecast</h3>
+
+<input type="text" placeholder="Enter City">
+
 <button id="weatherBtn">Get Weather</button>
+
 </div>
 
 <div class="feature-card">
+
 <h3 id="diseaseTitle">🧪 Disease Detection</h3>
+
+<input type="file">
+
 <button id="diseaseBtn">Analyze Plant</button>
+
 </div>
 
 <div class="feature-card">
+
 <h3 id="marketTitle">📈 Market Prices</h3>
-<p>Rice ₹2400/q</p>
-<p>Wheat ₹2100/q</p>
-<p>Cotton ₹6500/q</p>
+
+<div class="market-item">
+<div>
+<h4>Rice</h4>
+<p>₹2400/q</p>
+</div>
+
+<span class="up">▲ +4.2%</span>
+</div>
+
+<div class="market-item">
+<div>
+<h4>Wheat</h4>
+<p>₹2100/q</p>
+</div>
+
+<span class="down">▼ -1.3%</span>
+</div>
+
+<div class="market-item">
+<div>
+<h4>Cotton</h4>
+<p>₹6500/q</p>
+</div>
+
+<span class="up">▲ +8.1%</span>
+</div>
+
+<div class="market-item">
+<div>
+<h4>Tomato</h4>
+<p>₹1800/q</p>
+</div>
+
+<span class="up">▲ +2.4%</span>
+</div>
+
 </div>
 
 </div>
 
 </section>
+
+<footer>
+© 2026 AgroSmart AI • Smart Farming For The Future
+</footer>
 
 <script src="js/script.js"></script>
 

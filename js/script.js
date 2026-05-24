@@ -1,7 +1,8 @@
 
 function changeLanguage(){
 
-const lang = document.getElementById("language").value;
+const lang =
+document.getElementById("language").value;
 
 if(lang === "hi"){
 
