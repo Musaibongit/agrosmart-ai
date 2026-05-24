@@ -1,189 +1,75 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AgroSmart AI</title>
-
 <link rel="stylesheet" href="css/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-
 </head>
 <body>
 
 <nav class="navbar">
-  <div class="logo">🌱 AgroSmart AI</div>
+<div class="logo">🌱 AgroSmart AI</div>
 
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="login.html">Login</a></li>
-    <li><a href="signup.html">Signup</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Features</a></li>
+
+<li>
+<select id="language" onchange="changeLanguage()">
+<option value="en">English</option>
+<option value="hi">हिंदी</option>
+<option value="mr">मराठी</option>
+</select>
+</li>
+</ul>
 </nav>
 
 <section class="hero">
+<div class="hero-content">
 
-<video autoplay muted loop playsinline class="bg-video">
-<source src="https://cdn.coverr.co/videos/coverr-wheat-field-1561973184257?download=1080p" type="video/mp4">
-</video>
+<h1 id="title">Smart Agriculture Advisor</h1>
 
-<div class="overlay"></div>
-
-<div class="hero-left" data-aos="fade-right">
-
-<div class="badge">🌿 AI Powered Farming</div>
-
-<h1>Smart Agriculture <span>Advisor</span></h1>
-
-<p>
-Modern smart farming platform with crop recommendations,
-weather forecast, disease analysis and market tracking.
+<p id="subtitle">
+Everything you need in one modern agriculture platform.
 </p>
 
-<div class="hero-buttons">
-<a href="#features"><button class="primary-btn">Explore Features</button></a>
-<a href="login.html"><button class="secondary-btn">Get Started</button></a>
-</div>
+<button>Explore Features</button>
 
 </div>
-
-<div class="hero-right" data-aos="fade-left">
-
-<div class="stats-grid">
-
-<div class="stat-card">
-<h2>92%</h2>
-<p>Better Yield</p>
-</div>
-
-<div class="stat-card">
-<h2>30%</h2>
-<p>Water Saved</p>
-</div>
-
-<div class="stat-card">
-<h2>95%</h2>
-<p>Healthy Crops</p>
-</div>
-
-<div class="stat-card">
-<h2>10K+</h2>
-<p>Farmers Helped</p>
-</div>
-
-</div>
-
-<div class="review-card">
-<p>
-“AgroSmart AI helped improve our crop planning and save water efficiently.”
-</p>
-
-<h4>— Ramesh Kumar, Farmer</h4>
-</div>
-
-</div>
-
 </section>
 
-<section class="features-section" id="features">
-
-<h2>Explore Smart Farming Features</h2>
-<p class="subtitle">Everything you need in one modern agriculture platform.</p>
+<section class="features-section">
 
 <div class="feature-grid">
 
-<div class="feature-card" data-aos="zoom-in">
-<h3>🌾 Crop Advisor</h3>
-
-<select id="soil">
-<option value="Black">Black Soil</option>
-<option value="Red">Red Soil</option>
-<option value="Sandy">Sandy Soil</option>
-</select>
-
-<input type="number" id="temp" placeholder="Temperature °C">
-
-<button onclick="recommendCrop()">Recommend Crop</button>
-
-<p id="cropResult"></p>
+<div class="feature-card">
+<h3 id="cropTitle">🌾 Crop Advisor</h3>
+<button id="cropBtn">Recommend Crop</button>
 </div>
 
-<div class="feature-card" data-aos="zoom-in">
-<h3>☁ Weather Forecast</h3>
-
-<input type="text" id="city" placeholder="Enter City">
-
-<button onclick="getWeather()">Get Weather</button>
-
-<div id="weatherResult"></div>
-
+<div class="feature-card">
+<h3 id="weatherTitle">☁ Weather Forecast</h3>
+<button id="weatherBtn">Get Weather</button>
 </div>
 
-<div class="feature-card" data-aos="zoom-in">
-<h3>🧪 Disease Detection</h3>
-
-<input type="file" id="diseaseImage">
-
-<button onclick="detectDisease()">Analyze Plant</button>
-
-<p id="diseaseResult"></p>
-
+<div class="feature-card">
+<h3 id="diseaseTitle">🧪 Disease Detection</h3>
+<button id="diseaseBtn">Analyze Plant</button>
 </div>
 
-<div class="feature-card" data-aos="zoom-in">
-<h3>📈 Market Prices</h3>
-
-<table>
-<tr>
-<th>Crop</th>
-<th>Price</th>
-</tr>
-
-<tr>
-<td>Rice</td>
-<td>₹2400/q</td>
-</tr>
-
-<tr>
-<td>Wheat</td>
-<td>₹2100/q</td>
-</tr>
-
-<tr>
-<td>Cotton</td>
-<td>₹6500/q</td>
-</tr>
-
-<tr>
-<td>Tomato</td>
-<td>₹1800/q</td>
-</tr>
-
-</table>
-
+<div class="feature-card">
+<h3 id="marketTitle">📈 Market Prices</h3>
+<p>Rice ₹2400/q</p>
+<p>Wheat ₹2100/q</p>
+<p>Cotton ₹6500/q</p>
 </div>
 
 </div>
 
 </section>
-
-<footer>
-© 2026 AgroSmart AI • Smart Farming For The Future
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-<script>
-AOS.init({
-duration:1200,
-once:true
-});
-</script>
 
 <script src="js/script.js"></script>
 

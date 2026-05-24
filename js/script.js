@@ -1,130 +1,98 @@
 
-function recommendCrop(){
+function changeLanguage(){
 
-const soil = document.getElementById('soil').value;
-const temp = parseInt(document.getElementById('temp').value);
+const lang = document.getElementById("language").value;
 
-let result = "";
+if(lang === "hi"){
 
-if(soil === "Black" && temp >= 25){
-result = "Recommended Crop: Cotton 🌾";
+document.getElementById("title").innerText =
+"स्मार्ट कृषि सलाहकार";
+
+document.getElementById("subtitle").innerText =
+"आधुनिक कृषि प्लेटफ़ॉर्म में आपकी सभी ज़रूरतें।";
+
+document.getElementById("cropTitle").innerText =
+"🌾 फसल सलाहकार";
+
+document.getElementById("weatherTitle").innerText =
+"☁ मौसम पूर्वानुमान";
+
+document.getElementById("diseaseTitle").innerText =
+"🧪 रोग पहचान";
+
+document.getElementById("marketTitle").innerText =
+"📈 बाजार मूल्य";
+
+document.getElementById("cropBtn").innerText =
+"फसल सुझाएँ";
+
+document.getElementById("weatherBtn").innerText =
+"मौसम देखें";
+
+document.getElementById("diseaseBtn").innerText =
+"पौधा जांचें";
+
 }
-else if(soil === "Red" && temp >= 20){
-result = "Recommended Crop: Groundnut 🥜";
+
+else if(lang === "mr"){
+
+document.getElementById("title").innerText =
+"स्मार्ट कृषी सल्लागार";
+
+document.getElementById("subtitle").innerText =
+"आधुनिक शेती प्लॅटफॉर्ममध्ये आपल्याला आवश्यक सर्व काही.";
+
+document.getElementById("cropTitle").innerText =
+"🌾 पीक सल्लागार";
+
+document.getElementById("weatherTitle").innerText =
+"☁ हवामान अंदाज";
+
+document.getElementById("diseaseTitle").innerText =
+"🧪 रोग ओळख";
+
+document.getElementById("marketTitle").innerText =
+"📈 बाजार भाव";
+
+document.getElementById("cropBtn").innerText =
+"पीक सुचवा";
+
+document.getElementById("weatherBtn").innerText =
+"हवामान पहा";
+
+document.getElementById("diseaseBtn").innerText =
+"वनस्पती तपासा";
+
 }
-else if(soil === "Sandy"){
-result = "Recommended Crop: Millet 🌱";
-}
+
 else{
-result = "Recommended Crop: Wheat 🌾";
-}
 
-document.getElementById('cropResult').innerText = result;
+document.getElementById("title").innerText =
+"Smart Agriculture Advisor";
 
-}
+document.getElementById("subtitle").innerText =
+"Everything you need in one modern agriculture platform.";
 
-async function getWeather(){
+document.getElementById("cropTitle").innerText =
+"🌾 Crop Advisor";
 
-const city = document.getElementById('city').value;
+document.getElementById("weatherTitle").innerText =
+"☁ Weather Forecast";
 
-const apiKey = "YOUR_REAL_API_KEY";
+document.getElementById("diseaseTitle").innerText =
+"🧪 Disease Detection";
 
-const url =
-`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+document.getElementById("marketTitle").innerText =
+"📈 Market Prices";
 
-try{
+document.getElementById("cropBtn").innerText =
+"Recommend Crop";
 
-const response = await fetch(url);
+document.getElementById("weatherBtn").innerText =
+"Get Weather";
 
-const data = await response.json();
-
-if(data.cod != 200){
-
-document.getElementById('weatherResult').innerHTML =
-`<p>City not found or API issue</p>`;
-
-return;
-
-}
-
-document.getElementById('weatherResult').innerHTML =
-`
-<p>🌡 Temperature: ${data.main.temp}°C</p>
-<p>💧 Humidity: ${data.main.humidity}%</p>
-<p>☁ Weather: ${data.weather[0].main}</p>
-<p>💨 Wind Speed: ${data.wind.speed} km/h</p>
-`;
-
-}catch(error){
-
-document.getElementById('weatherResult').innerHTML =
-`<p>Weather fetch failed</p>`;
-
-}
-
-}
-
-function detectDisease(){
-
-const image = document.getElementById('diseaseImage').files[0];
-
-if(!image){
-document.getElementById('diseaseResult').innerText =
-"Please upload a plant image.";
-return;
-}
-
-const diseases = [
-"Leaf Blight",
-"Powdery Mildew",
-"Bacterial Spot",
-"Healthy Plant"
-];
-
-const randomDisease =
-diseases[Math.floor(Math.random() * diseases.length)];
-
-document.getElementById('diseaseResult').innerText =
-"Analysis Result: " + randomDisease;
-
-}
-
-function signup(){
-
-const email =
-document.getElementById('signupEmail').value;
-
-const password =
-document.getElementById('signupPassword').value;
-
-localStorage.setItem("email",email);
-localStorage.setItem("password",password);
-
-document.getElementById('signupMsg').innerText =
-"Account Created Successfully ✅";
-
-}
-
-function login(){
-
-const email =
-document.getElementById('loginEmail').value;
-
-const password =
-document.getElementById('loginPassword').value;
-
-const savedEmail = localStorage.getItem("email");
-const savedPassword = localStorage.getItem("password");
-
-if(email === savedEmail && password === savedPassword){
-
-document.getElementById('loginMsg').innerText =
-"Login Successful ✅";
-
-}else{
-
-document.getElementById('loginMsg').innerText =
-"Invalid Credentials ❌";
+document.getElementById("diseaseBtn").innerText =
+"Analyze Plant";
 
 }
 
