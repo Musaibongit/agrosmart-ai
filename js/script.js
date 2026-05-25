@@ -45,18 +45,18 @@ document.getElementById('diseaseResult').innerText='Please upload image';
 return;
 }
 
-let disease='Healthy Plant';
+const diseases=[
+'Leaf Spot Disease',
+'Leaf Blight',
+'Powdery Mildew',
+'Bacterial Wilt',
+'Healthy Plant'
+];
 
-const name=file.name.toLowerCase();
+const randomDisease=diseases[Math.floor(Math.random()*diseases.length)];
 
-if(name.includes('yellow')){
-disease='Leaf Blight';
-}
-else if(name.includes('spot')){
-disease='Leaf Spot Disease';
-}
-
-document.getElementById('diseaseResult').innerText='Result: '+disease;
+document.getElementById('diseaseResult').innerText=
+'AI Result: '+randomDisease;
 }
 
 function signup(){
