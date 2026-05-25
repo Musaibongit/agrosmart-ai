@@ -1,11 +1,10 @@
-
 function signup(){
 
 const email=document.getElementById('signupEmail').value;
 const password=document.getElementById('signupPassword').value;
 
-localStorage.setItem('email',email);
-localStorage.setItem('password',password);
+localStorage.setItem('userEmail',email);
+localStorage.setItem('userPassword',password);
 
 document.getElementById('signupMsg').innerText='Signup Successful ✅';
 
@@ -16,8 +15,8 @@ function login(){
 const email=document.getElementById('loginEmail').value;
 const password=document.getElementById('loginPassword').value;
 
-const savedEmail=localStorage.getItem('email');
-const savedPassword=localStorage.getItem('password');
+const savedEmail=localStorage.getItem('userEmail');
+const savedPassword=localStorage.getItem('userPassword');
 
 if(email===savedEmail && password===savedPassword){
 document.getElementById('loginMsg').innerText='Login Successful ✅';
@@ -32,6 +31,7 @@ function changeLanguage(){
 const lang=document.getElementById('language').value;
 
 if(lang==='hi'){
+
 document.getElementById('title').innerText='स्मार्ट कृषि सलाहकार';
 document.getElementById('subtitle').innerText='आधुनिक कृषि प्लेटफ़ॉर्म में आपकी सभी ज़रूरतें।';
 document.getElementById('cropTitle').innerText='🌾 फसल सलाहकार';
@@ -41,8 +41,11 @@ document.getElementById('marketTitle').innerText='📈 बाजार मूल
 document.getElementById('cropBtn').innerText='फसल सुझाएँ';
 document.getElementById('weatherBtn').innerText='मौसम देखें';
 document.getElementById('diseaseBtn').innerText='पौधा जांचें';
+
 }
+
 else if(lang==='mr'){
+
 document.getElementById('title').innerText='स्मार्ट कृषी सल्लागार';
 document.getElementById('subtitle').innerText='आधुनिक शेती प्लॅटफॉर्ममध्ये आपल्याला आवश्यक सर्व काही.';
 document.getElementById('cropTitle').innerText='🌾 पीक सल्लागार';
@@ -52,7 +55,11 @@ document.getElementById('marketTitle').innerText='📈 बाजार भाव
 document.getElementById('cropBtn').innerText='पीक सुचवा';
 document.getElementById('weatherBtn').innerText='हवामान पहा';
 document.getElementById('diseaseBtn').innerText='वनस्पती तपासा';
-}else{
+
+}
+
+else{
+
 document.getElementById('title').innerText='Smart Agriculture Advisor';
 document.getElementById('subtitle').innerText='Everything you need in one modern agriculture platform.';
 document.getElementById('cropTitle').innerText='🌾 Crop Advisor';
@@ -62,6 +69,7 @@ document.getElementById('marketTitle').innerText='📈 Market Prices';
 document.getElementById('cropBtn').innerText='Recommend Crop';
 document.getElementById('weatherBtn').innerText='Get Weather';
 document.getElementById('diseaseBtn').innerText='Analyze Plant';
+
 }
 
 }
