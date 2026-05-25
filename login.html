@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login</title>
 <link rel="stylesheet" href="css/style.css">
+<title>Login</title>
 </head>
 <body>
-
-<div class="auth-container">
+<div class="auth fade">
 <h1>Login</h1>
-<input type="email" placeholder="Enter Email">
-<input type="password" placeholder="Enter Password">
-<button>Login</button>
+<input type="email" id="loginEmail" placeholder="Email">
+<input type="password" id="loginPassword" placeholder="Password">
+<button onclick="login()">Login</button>
+<p id="loginMsg"></p>
 </div>
-
+<script src="js/script.js"></script>
 </body>
 </html>

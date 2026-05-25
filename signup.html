@@ -2,18 +2,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Signup</title>
 <link rel="stylesheet" href="css/style.css">
+<title>Signup</title>
 </head>
 <body>
-
-<div class="auth-container">
+<div class="auth fade">
 <h1>Signup</h1>
-<input type="text" placeholder="Full Name">
-<input type="email" placeholder="Enter Email">
-<input type="password" placeholder="Create Password">
-<button>Create Account</button>
+<input type="email" id="signupEmail" placeholder="Email">
+<input type="password" id="signupPassword" placeholder="Password">
+<button onclick="signup()">Create Account</button>
+<p id="signupMsg"></p>
 </div>
-
+<script src="js/script.js"></script>
 </body>
 </html>
