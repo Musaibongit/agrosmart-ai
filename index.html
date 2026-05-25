@@ -30,22 +30,13 @@
 </nav>
 
 <section class="hero">
-
 <div class="overlay"></div>
 
 <div class="hero-content fade-up">
 <h1 id="title">Smart Agriculture Advisor</h1>
-
-<p id="subtitle">
-Everything you need in one modern agriculture platform.
-</p>
-
-<a href="#features">
-<button class="main-btn">Explore Features</button>
-</a>
-
+<p id="subtitle">Everything you need in one modern agriculture platform.</p>
+<a href="#features"><button class="main-btn">Explore Features</button></a>
 </div>
-
 </section>
 
 <section class="features" id="features">
@@ -53,62 +44,55 @@ Everything you need in one modern agriculture platform.
 <div class="feature-card fade-up">
 <h3 id="cropTitle">🌾 Crop Advisor</h3>
 
-<select>
+<select id="soil">
 <option>Black Soil</option>
 <option>Red Soil</option>
 <option>Sandy Soil</option>
 <option>Clay Soil</option>
 </select>
 
-<input type="text" placeholder="Temperature °C">
+<input type="number" id="temp" placeholder="Temperature °C">
 
-<button id="cropBtn">Recommend Crop</button>
+<button onclick="recommendCrop()" id="cropBtn">Recommend Crop</button>
+
+<p id="cropResult" class="result"></p>
 </div>
 
 <div class="feature-card fade-up">
 <h3 id="weatherTitle">☁ Weather Forecast</h3>
 
-<input type="text" placeholder="Enter City">
+<input type="text" id="city" placeholder="Enter City">
 
-<button id="weatherBtn">Get Weather</button>
+<button onclick="getWeather()" id="weatherBtn">Get Weather</button>
 
-<p class="small-text">Live weather integration ready</p>
+<p id="weatherResult" class="result"></p>
 </div>
 
 <div class="feature-card fade-up">
 <h3 id="diseaseTitle">🧪 Disease Detection</h3>
 
-<input type="file">
+<input type="file" id="plantFile">
 
-<button id="diseaseBtn">Analyze Plant</button>
+<button onclick="analyzePlant()" id="diseaseBtn">Analyze Plant</button>
 
-<p class="small-text">AI based plant disease detection</p>
+<p id="diseaseResult" class="result"></p>
 </div>
 
 <div class="feature-card fade-up">
 <h3 id="marketTitle">📈 Market Prices</h3>
 
 <div class="market-box">
-<div>
-<h4>Rice</h4>
-<p>₹2400/q</p>
-</div>
+<div><h4>Rice</h4><p>₹2400/q</p></div>
 <span class="up">▲ +4.2%</span>
 </div>
 
 <div class="market-box">
-<div>
-<h4>Wheat</h4>
-<p>₹2100/q</p>
-</div>
+<div><h4>Wheat</h4><p>₹2100/q</p></div>
 <span class="down">▼ -1.3%</span>
 </div>
 
 <div class="market-box">
-<div>
-<h4>Cotton</h4>
-<p>₹6500/q</p>
-</div>
+<div><h4>Cotton</h4><p>₹6500/q</p></div>
 <span class="up">▲ +8.1%</span>
 </div>
 
@@ -121,6 +105,5 @@ Everything you need in one modern agriculture platform.
 </footer>
 
 <script src="js/script.js"></script>
-
 </body>
 </html>
